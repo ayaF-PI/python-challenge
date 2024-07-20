@@ -18,17 +18,7 @@ This repository contains two Python projects: `PyBank` and `PyPoll`.
 - `Resources/budget_data.csv`: Financial data file
 - `main.py`: Python script for analysis
 
-### How to Run
 
-1. Open Terminal in VS Code.
-2. Go to the `PyBank` folder:
-    ```bash
-    cd path/to/your/python-challenge/PyBank
-    ```
-3. Run the script:
-    ```bash
-    python main.py
-    ```
 
 ## PyPoll
 
@@ -44,16 +34,6 @@ This repository contains two Python projects: `PyBank` and `PyPoll`.
 - `Resources/election_data.csv`: Election data file
 - `main.py`: Python script for analysis
 
-### How to Run
 
-1. Open Terminal in VS Code.
-2. Go to the `PyPoll` folder:
-    ```bash
-    cd path/to/your/python-challenge/PyPoll
-    ```
-3. Run the script:
-    ```bash
-    python main.py
-    ```
 
 
