@@ -76,4 +76,4 @@ The `PyPoll` project analyzes election data from a CSV file to provide insights 
 
 ## Code Source
 
-This project includes code inspired by class activities, explanations provided by the instructor in class, and resources such as Stack Overflow. The structure and logic are influenced by these sources to provide a comprehensive analysis.
+This project includes code inspired by class activities, explanations provided by the instructor in class, research on Google, and programming-specific websites such as Stack Overflow. The structure and logic are influenced by these sources to provide a comprehensive analysis.
