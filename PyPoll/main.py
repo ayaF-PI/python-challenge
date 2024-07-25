@@ -9,37 +9,30 @@ print(f"CSV Path: {csvpath}")
 
 # Initialize variables
 total_votes = 0
-candidates = {}
+candidate_votes = {}
 winner = {"name": "", "votes": 0}
 
 # Print initial values to verify
-print(f"Initial values:\nTotal Votes: {total_votes}\nCandidates: {candidates}\nWinner: {winner}")
+print(f"Initial values:\nTotal Votes: {total_votes}\nCandidates: {candidate_votes}\nWinner: {winner}")
 
 # Read the CSV file
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    header = next(csvreader)  # Read the header
+    header = next(csvreader)  # Skip the header row
 
     # Verify the header
     print(f"Header: {header}")
 
     for row in csvreader:
-        # Verify the content of each row
-        print(f"Row: {row}")
-
         # Count total votes
         total_votes += 1
 
-        # Count votes for each candidate
+        # Update the vote count for each candidate
         candidate = row[2]
-        if candidate in candidates:
-            candidates[candidate] += 1
+        if candidate in candidate_votes:
+            candidate_votes[candidate] += 1
         else:
-            candidates[candidate] = 1
-
-        # Verify values after each row
-        print(f"Total Votes: {total_votes}")
-        print(f"Candidates: {candidates}")
+            candidate_votes[candidate] = 1
 
 # Calculate percentages and determine the winner
 results = (
@@ -48,15 +41,12 @@ results = (
     f"Total Votes: {total_votes}\n"
     "-------------------------\n"
 )
-for candidate, votes in candidates.items():
+for candidate, votes in candidate_votes.items():
     percentage = (votes / total_votes) * 100
     results += f"{candidate}: {percentage:.3f}% ({votes})\n"
     if votes > winner["votes"]:
         winner["name"] = candidate
         winner["votes"] = votes
-
-    # Verify current winner
-    print(f"Current Winner: {winner}")
 
 results += (
     "-------------------------\n"
@@ -73,5 +63,6 @@ with open(output_path, 'w') as textfile:
 
 # Verify the results were written to the file
 print(f"Results written to {output_path}")
+
 
 
